@@ -1,0 +1,34 @@
+{
+  "business": "Northside Plumbing",
+  "owner": "Dave",
+  "tagline": "Same-day plumber, Chermside to Redcliffe",
+  "meta": "Licensed plumber servicing Brisbane northside. Blocked drains, hot water, leaks and gas. Same-day service, no call-out fee on quoted jobs.",
+  "headline": "Blocked drain or burst pipe? Same-day plumber, Chermside to Redcliffe.",
+  "sub": "No call-out fee on quoted jobs. Open 7 days.",
+  "cta": "Get a free quote",
+  "phone": "0400 000 000",
+  "email": "dave@example.com",
+  "licence": "QBCC 12345",
+  "abn": "12 345 678 901",
+  "insured": true,
+  "hours": "Mon–Sun 7am–6pm. Emergency call-outs available.",
+  "areas": ["Chermside", "Aspley", "Bracken Ridge", "Redcliffe", "North Lakes"],
+  "map_query": "Chermside QLD",
+  "theme": "blue",
+  "schema_type": "Plumber",
+  "services": [
+    {"name": "Blocked drains", "desc": "Cleared same day with a drain camera and jetter.", "price": "from $180"},
+    {"name": "Hot water systems", "desc": "Repairs and same-day replacement, gas or electric."},
+    {"name": "Leak detection", "desc": "Find it, fix it, no guesswork."},
+    {"name": "Gas fitting", "desc": "Licensed and certified for cooktops, heaters and BBQ points."}
+  ],
+  "photos": [],
+  "reviews": [
+    {"text": "Turned up in an hour, fixed the drain, cleaned up after. Fair price.", "by": "Sharon, Aspley"}
+  ],
+  "about": "Dave has been a licensed plumber on Brisbane's northside for 12 years. You deal with him directly, he turns up when he says he will, and he quotes before he starts.",
+  "faq": [
+    {"q": "Do you charge a call-out fee?", "a": "Not on quoted jobs. If you accept the quote, the call-out is included."},
+    {"q": "Do you do emergencies?", "a": "Yes. Call the number above any time and you'll get Dave, not a call centre."}
+  ]
+}
