@@ -1,0 +1,21 @@
+name: sms
+on:
+  workflow_dispatch:
+    inputs:
+      batch: {description: "CSV in outreach/", default: "sms_leads.csv"}
+      template: {description: "sms_initial or sms_followup", default: "sms_initial"}
+permissions: {contents: write}
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 outreach/send_sms.py
+        env:
+          CLICKSEND_USER: ${{ secrets.CLICKSEND_USER }}
+          CLICKSEND_KEY: ${{ secrets.CLICKSEND_KEY }}
+          BATCH: ${{ inputs.batch }}
+          TEMPLATE: ${{ inputs.template }}
+      - run: |
+          git config user.email siteworkqld@gmail.com; git config user.name "Sitework bot"
+          git add outreach/sms_sent.log && git commit -m "log sms sends" && git push || true
