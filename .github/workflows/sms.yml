@@ -18,4 +18,4 @@ jobs:
           TEMPLATE: ${{ inputs.template }}
       - run: |
           git config user.email siteworkqld@gmail.com; git config user.name "Sitework bot"
-          git add outreach/sms_sent.log && git commit -m "log sms sends" && git push || true
+          git add outreach/sms_sent.log outreach/sms_status.log && git commit -m "log sms sends" && git push || true

@@ -14,7 +14,7 @@ for r in rows:
     try:
         res=json.load(urllib.request.urlopen(req)); st=res['data']['messages'][0]['status']
     except urllib.error.HTTPError as e: st='HTTP '+str(e.code)+' '+e.read().decode()[:200]
-    print(r['phone'],'->',st,'|',len(msg),'chars')
+    print(r['phone'],'->',st,'|',len(msg),'chars'); open('outreach/sms_status.log','a').write(f"{tmpl}|{r['phone']}|{st}\n")
     if st=='SUCCESS': open(log,'a').write(key+'\n'); n+=1
     time.sleep(3)
 print(f'done: {n} sent')
