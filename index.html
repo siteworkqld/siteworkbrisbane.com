@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sitework — a website for your trade business, live in 3 days</title>
+<meta name="description" content="Websites for Brisbane tradies. Built in 3 days, one flat price, you see it before you pay.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100,400;100,600;125,800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#fff;--ink:#1b2a41;--hi:#f5d000;--safety:#ff6b1a;--safety-d:#e05a0f;--mute:#5f6b7a;--line:#d9dde3;--card:#f6f7f9}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#12192a;--ink:#f3f5f8;--mute:#a3adbb;--line:#2a3447;--card:#192237}}
+:root[data-theme="dark"]{--paper:#12192a;--ink:#f3f5f8;--mute:#a3adbb;--line:#2a3447;--card:#192237}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:"Archivo",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.5;font-size:1.0625rem;padding-bottom:4.5rem}
+@media(min-width:48rem){body{padding-bottom:0}}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.25rem}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--safety);outline-offset:2px}
+header{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 0}
+.brand{font-weight:800;font-stretch:125%;font-size:1.25rem;letter-spacing:-.01em;text-decoration:none}
+.brand span{background:var(--hi);color:#1b2a41;padding:.1em .3em}
+.loc{color:var(--mute);font-size:.95rem}
+
+.hero{padding:2rem 0 3rem;display:grid;gap:2rem;grid-template-columns:1fr}
+@media(min-width:54rem){.hero{grid-template-columns:1.2fr .8fr;align-items:center;padding:3rem 0 4rem}}
+.sign{background:var(--hi);color:#1b2a41;display:inline-block;padding:1rem 1.25rem 1.1rem;margin-bottom:1.25rem;clip-path:polygon(0 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%)}
+.sign h1{font-weight:800;font-stretch:125%;font-size:clamp(1.9rem,5.5vw,3.6rem);line-height:.98;letter-spacing:-.02em;max-width:16ch}
+.lead{font-size:clamp(1.1rem,2.2vw,1.35rem);max-width:36ch;margin-bottom:1.5rem}
+.cta{display:inline-block;background:var(--safety);color:#fff;text-decoration:none;font-weight:600;padding:.95rem 1.4rem;border-radius:.25rem;font-size:1.05rem;border:0;cursor:pointer;font-family:inherit}
+.cta:hover,.cta:focus-visible{background:var(--safety-d)}
+.areas{margin-top:1.25rem;color:var(--mute);font-size:.95rem;max-width:40ch}
+.areas b{color:var(--ink);font-weight:600}
+.proof{display:grid;gap:.75rem}
+.proof div{border-left:4px solid var(--hi);padding:.65rem 1rem;background:var(--card);border-radius:0 .3rem .3rem 0}
+.proof strong{display:block;font-weight:600}
+.proof span{color:var(--mute);font-size:.95rem}
+
+section{padding:3rem 0;border-top:1px solid var(--line)}
+h2{font-weight:800;font-stretch:125%;font-size:clamp(1.5rem,3.5vw,2.25rem);line-height:1.05;letter-spacing:-.015em;margin-bottom:1.5rem;max-width:22ch}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:2rem 2.5rem}
+.cols h3{font-weight:600;font-size:1.1rem;margin-bottom:.35rem}
+.cols p{color:var(--mute);max-width:36ch}
+
+
+.examples{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:2.25rem 1.5rem;justify-items:center}
+.ex{width:100%;max-width:17rem}
+.phone{border:7px solid #0f172a;border-radius:2rem;overflow:hidden;background:#fff;box-shadow:0 18px 40px rgba(15,23,42,.22),inset 0 0 0 1px rgba(255,255,255,.08);aspect-ratio:9/18;position:relative}
+.phone::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:34%;height:.9rem;background:#0f172a;border-radius:0 0 .7rem .7rem;z-index:2}
+.scr{height:100%;display:flex;flex-direction:column;font-size:.6rem;line-height:1.4;color:#1b2a41;overflow:hidden}
+.scr>*{flex:0 0 auto}
+.m-fill{flex:1 1 auto}
+.ex figcaption{margin-top:.85rem;font-size:.95rem;color:var(--mute);text-align:center}
+.ex figcaption b{display:block;color:var(--ink);font-weight:600}
+.m-nav{display:flex;justify-content:space-between;align-items:center;padding:1.1rem .7rem .55rem;font-weight:800;font-stretch:125%;font-size:.72rem}
+.m-btn{display:inline-block;padding:.32rem .55rem;border-radius:.2rem;font-weight:600;font-size:.56rem;white-space:nowrap}
+.m-hero{padding:.65rem .7rem .75rem}
+.m-hero h4{font-weight:800;font-stretch:125%;font-size:.98rem;line-height:1.08;letter-spacing:-.01em;margin-bottom:.3rem}
+.m-hero p{margin-bottom:.5rem;opacity:.85}
+.m-tag{font-size:.52rem;font-weight:600;margin-bottom:.3rem;opacity:.85}
+.m-row{display:grid;grid-template-columns:1fr 1fr;gap:.35rem;padding:0 .7rem .6rem}
+.m-card{padding:.38rem .45rem;border-radius:.25rem;font-weight:600;font-size:.58rem}
+.m-card small{display:block;font-weight:400;opacity:.7;font-size:.52rem}
+.m-img{margin:0 .7rem .6rem;border-radius:.3rem;overflow:hidden;line-height:0}
+.m-img svg{width:100%;height:auto;display:block}
+.m-stars{color:#f5a300;letter-spacing:.04em;font-size:.6rem}
+.m-rev{padding:0 .7rem .6rem;font-size:.56rem}
+.m-rev q{display:block;margin:.1rem 0}
+.m-list{padding:0 .7rem .6rem;display:grid;gap:.15rem;font-size:.58rem}
+.m-list div{display:flex;justify-content:space-between;border-bottom:1px solid rgba(0,0,0,.08);padding:.22rem 0}
+.m-bar{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:.35rem;padding:.45rem .55rem .6rem;border-top:1px solid rgba(0,0,0,.08)}
+.m-bar span{text-align:center;padding:.42rem;border-radius:.25rem;font-weight:600;font-size:.58rem}
+.tA{background:#f5f7fa}.tA .m-nav{background:#fff;border-bottom:1px solid #e5e8ec}.tA .m-nav .m-btn{background:#0b5fb8;color:#fff}
+.tA .m-hero{background:#0b5fb8;color:#fff}.tA .m-hero .m-btn{background:#f5d000;color:#1b2a41}
+.tA .m-card{background:#fff;border:1px solid #e3e7ed}.tA .m-bar{background:#fff}.tA .m-bar span:first-child{background:#0b5fb8;color:#fff}.tA .m-bar span:last-child{background:#e8eef7;color:#0b5fb8}
+.tB{background:#0f172a;color:#e5e9f0}.tB .m-nav{color:#f5d000;border-bottom:1px solid rgba(255,255,255,.1)}.tB .m-nav .m-btn{background:#f5d000;color:#0f172a}
+.tB .m-hero h4{color:#fff}.tB .m-hero .m-btn{background:#ff6b1a;color:#fff}.tB .m-tag{color:#f5d000}
+.tB .m-list div{border-color:rgba(255,255,255,.12)}.tB .m-bar{border-color:rgba(255,255,255,.12)}.tB .m-bar span:first-child{background:#f5d000;color:#0f172a}.tB .m-bar span:last-child{background:#1e293b;color:#fff}
+.tC{background:#fff}.tC .m-nav{background:#2f5d3a;color:#fff}.tC .m-nav .m-btn{background:#fff;color:#2f5d3a}
+.tC .m-img{margin:0;border-radius:0}.tC .m-hero .m-btn{background:#2f5d3a;color:#fff}.tC .m-card{background:#eef4ea;color:#1f3a25}
+.tC .m-bar span:first-child{background:#2f5d3a;color:#fff}.tC .m-bar span:last-child{background:#eef4ea;color:#2f5d3a}
+.steps{counter-reset:s;list-style:none;display:grid;gap:1.25rem;max-width:40rem}
+.steps li{counter-increment:s;display:grid;grid-template-columns:3rem 1fr;gap:1rem;align-items:start}
+.steps li::before{content:counter(s);font-weight:800;font-stretch:125%;font-size:1.75rem;line-height:1;background:var(--hi);color:#1b2a41;width:3rem;height:3rem;display:grid;place-items:center;border-radius:.25rem}
+.steps strong{display:block;margin-bottom:.15rem}
+.steps p{color:var(--mute)}
+
+.price{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:2.5rem;align-items:start}
+.big{font-weight:800;font-stretch:125%;font-size:clamp(3rem,9vw,5.5rem);line-height:.9;letter-spacing:-.03em}
+.big sup{font-size:.4em;vertical-align:top;top:.35em;position:relative;font-weight:600}
+.was{color:var(--mute);margin-top:.5rem}
+.was s{opacity:.7}
+.inc{list-style:none;display:grid;gap:.5rem}
+.inc li{padding-left:1.5rem;position:relative}
+.inc li::before{content:"";position:absolute;left:0;top:.55em;width:.75rem;height:.75rem;background:var(--safety);clip-path:polygon(0 40%,40% 100%,100% 0,100% 30%,40% 100%,0 60%)}
+.guarantee{margin-top:1.5rem;padding:1rem 1.15rem;border-left:4px solid var(--hi);background:var(--card);max-width:40rem}
+
+.faq{max-width:44rem;display:grid;gap:.25rem}
+.faq details{border-top:1px solid var(--line);padding:.9rem 0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-weight:400;color:var(--mute)}
+.faq details[open] summary::after{content:"–"}
+.faq p{color:var(--mute);margin-top:.5rem;max-width:60ch}
+
+.contact{background:var(--ink);color:var(--paper)}
+.contact h2{color:inherit}
+.contact .grid{display:grid;gap:2rem;grid-template-columns:1fr}
+@media(min-width:54rem){.contact .grid{grid-template-columns:1fr 1fr}}
+.contact .ways{display:grid;gap:1rem;font-size:1.15rem;align-content:start}
+.contact .ways a{text-decoration:none;font-weight:600;border-bottom:2px solid var(--hi)}
+.contact .ways p{color:#a3adbb;font-size:1rem}
+form{display:grid;gap:.85rem}
+label{display:grid;gap:.3rem;font-size:.95rem;color:#c9d1dc}
+input,select,textarea{font:inherit;padding:.7rem .8rem;border-radius:.25rem;border:1px solid #3a4661;background:#0d1322;color:#fff;width:100%}
+textarea{min-height:5.5rem;resize:vertical}
+.contact .cta{justify-self:start}
+.who{margin-top:2rem;padding-top:1.5rem;border-top:1px solid #2a3447;color:#a3adbb;max-width:52ch}
+.who b{color:#fff;font-weight:600}
+footer{padding:1.5rem 0 2.5rem;color:var(--mute);font-size:.9rem}
+
+.bar{position:fixed;left:0;right:0;bottom:0;display:grid;grid-template-columns:1fr 1fr;gap:.5rem;padding:.6rem .75rem;background:var(--paper);border-top:1px solid var(--line);z-index:9}
+.bar a{text-align:center;text-decoration:none;font-weight:600;padding:.8rem;border-radius:.25rem;font-size:1rem}
+.bar .t{background:var(--ink);color:var(--paper)}
+.bar .q{background:var(--safety);color:#fff}
+@media(min-width:48rem){.bar{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="brand" href="#top"><span>Site</span>work</a>
+    <div class="loc">Brisbane, QLD</div>
+  </header>
+
+  <div class="hero" id="top">
+    <div>
+      <div class="sign"><h1>A website for your trade business. Live in 3 days. Pay only if you like it.</h1></div>
+      <p class="lead">Home, services, photos, tap-to-call and a quote form. One flat price, no monthly fee, nothing for you to write or learn.</p>
+      <a class="cta" href="#contact">Get your site built</a>
+      <p class="areas"><b>Serving</b> Brisbane north and south, Logan, Ipswich, Moreton Bay, Redlands and the Gold Coast. Any trade.</p>
+    </div>
+    <div class="proof">
+      <div><strong>See it before you pay</strong><span>You get a link to the finished site first. Don't like it? Walk away, no charge.</span></div>
+      <div><strong>You own everything</strong><span>Domain and hosting are in your name. No lock-in, no ransom.</span></div>
+      <div><strong>Built by a person, not a template</strong><span>Every site is done from scratch for your trade, your suburbs, your photos.</span></div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2>Most tradies lose jobs before the phone rings</h2>
+    <div class="cols">
+      <div><h3>They can't find you</h3><p>People search "plumber near me" and ring whoever shows up first. No site means no result.</p></div>
+      <div><h3>The old site puts them off</h3><p>A page that's ugly on a phone, has no photos, or says "under construction" sends them to the next guy.</p></div>
+      <div><h3>Facebook isn't enough</h3><p>Half your customers don't use it, and it never shows your services, area and licence in one place.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What a Sitework site looks like</h2>
+    <p style="color:var(--mute);max-width:52ch;margin:-.75rem 0 1.75rem">Three example layouts, the way your customers see them on a phone. Yours gets your name, your photos and your suburbs.</p>
+    <div class="examples">
+
+      <figure class="ex">
+        <div class="phone"><div class="scr tA">
+          <div class="m-nav"><span>Northside Plumbing</span><span class="m-btn">Call now</span></div>
+          <div class="m-hero">
+            <div class="m-tag">Licensed plumber · QBCC 12345</div>
+            <h4>Blocked drain or burst pipe? Same-day plumber, Chermside to Redcliffe.</h4>
+            <p>No call-out fee on quoted jobs. Open 7 days.</p>
+            <span class="m-btn">Get a free quote</span>
+          </div>
+          <div class="m-img" style="margin-top:.6rem"><svg viewBox="0 0 320 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a plumber's van"><defs><linearGradient id="skyA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dbe9f8"/><stop offset="1" stop-color="#eef4fb"/></linearGradient></defs><rect width="320" height="130" fill="url(#skyA)"/><rect y="98" width="320" height="32" fill="#b9c4d1"/><rect y="98" width="320" height="3" fill="#9aa8b8"/><rect x="40" y="40" width="200" height="58" rx="6" fill="#fff" stroke="#c4ced9"/><path d="M240 58h34a8 8 0 0 1 8 8v32h-42z" fill="#fff" stroke="#c4ced9"/><rect x="250" y="64" width="24" height="18" rx="2" fill="#8fb4dd"/><rect x="52" y="52" width="110" height="10" rx="2" fill="#0b5fb8"/><rect x="52" y="68" width="70" height="6" rx="2" fill="#0b5fb8" opacity=".55"/><rect x="40" y="82" width="242" height="6" fill="#f5d000"/><circle cx="82" cy="100" r="12" fill="#1b2a41"/><circle cx="82" cy="100" r="5" fill="#8b95a5"/><circle cx="236" cy="100" r="12" fill="#1b2a41"/><circle cx="236" cy="100" r="5" fill="#8b95a5"/></svg></div>
+          <div class="m-row">
+            <div class="m-card">Blocked drains<small>Cleared same day</small></div>
+            <div class="m-card">Hot water<small>Repairs &amp; replacement</small></div>
+            <div class="m-card">Leak detection<small>Find it, fix it</small></div>
+            <div class="m-card">Gas fitting<small>Licensed &amp; certified</small></div>
+          </div>
+          <div class="m-rev"><span class="m-stars">★★★★★</span><q>Turned up in an hour, fixed the drain, cleaned up after. Fair price.</q>— Sharon, Aspley</div>
+          <div class="m-fill"></div>
+          <div class="m-bar"><span>Call 0400 ···</span><span>Get a quote</span></div>
+        </div></div>
+        <figcaption><b>Plumber</b>Call button on every screen. Suburbs in the headline so Google matches local searches.</figcaption>
+      </figure>
+
+      <figure class="ex">
+        <div class="phone"><div class="scr tB">
+          <div class="m-nav"><span>Volt Electrical</span><span class="m-btn">Book now</span></div>
+          <div class="m-hero">
+            <div class="m-tag">Licence 87654 · Fully insured</div>
+            <h4>Electrician for Logan and Brisbane south.</h4>
+            <p>Switchboards, safety switches, new points, fans and lights. Upfront pricing, no surprises.</p>
+            <span class="m-btn">Book a quote</span>
+          </div>
+          <div class="m-img"><svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a new switchboard"><rect width="320" height="120" fill="#1e293b"/><rect x="70" y="10" width="180" height="100" rx="6" fill="#e8ecf2"/><rect x="82" y="22" width="156" height="76" rx="3" fill="#cfd6df"/><g fill="#fff" stroke="#9aa6b5"><rect x="90" y="30" width="18" height="30" rx="2"/><rect x="112" y="30" width="18" height="30" rx="2"/><rect x="134" y="30" width="18" height="30" rx="2"/><rect x="156" y="30" width="18" height="30" rx="2"/><rect x="178" y="30" width="18" height="30" rx="2"/><rect x="200" y="30" width="18" height="30" rx="2"/><rect x="90" y="66" width="40" height="26" rx="2"/><rect x="134" y="66" width="18" height="26" rx="2"/><rect x="156" y="66" width="18" height="26" rx="2"/><rect x="178" y="66" width="40" height="26" rx="2"/></g><g fill="#f5d000"><rect x="95" y="34" width="8" height="10" rx="1"/><rect x="117" y="34" width="8" height="10" rx="1"/><rect x="139" y="34" width="8" height="10" rx="1"/><rect x="161" y="34" width="8" height="10" rx="1"/><rect x="183" y="34" width="8" height="10" rx="1"/><rect x="205" y="34" width="8" height="10" rx="1"/></g><rect x="96" y="72" width="28" height="6" rx="1" fill="#ff6b1a"/><rect x="184" y="72" width="28" height="6" rx="1" fill="#ff6b1a"/></svg></div>
+          <div class="m-list">
+            <div><span>Safety switch install</span><span>from $190</span></div>
+            <div><span>Extra power point</span><span>from $140</span></div>
+            <div><span>Ceiling fan install</span><span>from $220</span></div>
+            <div><span>Switchboard upgrade</span><span>Quoted</span></div>
+          </div>
+          <div class="m-rev"><span class="m-stars">★★★★★</span><q>Quoted on the phone, price didn't change. Neat job.</q>— Dean, Springwood</div>
+          <div class="m-fill"></div>
+          <div class="m-bar"><span>Call 0412 ···</span><span>Text us</span></div>
+        </div></div>
+        <figcaption><b>Electrician</b>Price guide on the page. Customers who see "from $190" ring; the ones who see nothing keep scrolling.</figcaption>
+      </figure>
+
+      <figure class="ex">
+        <div class="phone"><div class="scr tC">
+          <div class="m-nav"><span>Greenline Landscapes</span><span class="m-btn">Quote</span></div>
+          <div class="m-img"><svg viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a finished backyard"><defs><linearGradient id="skyC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe6f7"/><stop offset="1" stop-color="#eaf3fa"/></linearGradient></defs><rect width="320" height="150" fill="url(#skyC)"/><rect y="90" width="320" height="60" fill="#5f9a4a"/><path d="M0 90h320v14H0z" fill="#6fae57"/><rect y="70" width="320" height="22" fill="#9c7a52"/><g fill="#8a6a44"><rect x="0" y="70" width="320" height="3"/><rect x="0" y="80" width="320" height="2"/></g><g fill="#b58d5d"><rect x="20" y="72" width="40" height="7"/><rect x="70" y="72" width="40" height="7"/><rect x="120" y="72" width="40" height="7"/><rect x="170" y="72" width="40" height="7"/><rect x="220" y="72" width="40" height="7"/><rect x="270" y="72" width="40" height="7"/><rect x="45" y="82" width="40" height="7"/><rect x="95" y="82" width="40" height="7"/><rect x="145" y="82" width="40" height="7"/><rect x="195" y="82" width="40" height="7"/><rect x="245" y="82" width="40" height="7"/></g><g fill="#3f7a35"><ellipse cx="40" cy="62" rx="22" ry="16"/><ellipse cx="290" cy="58" rx="26" ry="20"/><ellipse cx="250" cy="66" rx="16" ry="12"/></g><rect x="36" y="64" width="8" height="12" fill="#6b4a2b"/><rect x="286" y="62" width="8" height="14" fill="#6b4a2b"/><g fill="#c9ccd1"><rect x="120" y="108" width="34" height="34" rx="2"/><rect x="158" y="108" width="34" height="34" rx="2"/><rect x="120" y="146" width="34" height="4"/><rect x="158" y="146" width="34" height="4"/></g><rect x="200" y="112" width="40" height="18" rx="3" fill="#2f5d3a"/><rect x="204" y="130" width="4" height="12" fill="#2f5d3a"/><rect x="232" y="130" width="4" height="12" fill="#2f5d3a"/></svg></div>
+          <div class="m-hero">
+            <h4>Turf, retaining walls and paving across the Redlands.</h4>
+            <p>Family-run, 12 years in. Free on-site quotes, work starts within two weeks.</p>
+            <span class="m-btn">Request a site visit</span>
+          </div>
+          <div class="m-row">
+            <div class="m-card">Turf &amp; irrigation</div>
+            <div class="m-card">Retaining walls</div>
+            <div class="m-card">Paving &amp; concrete</div>
+            <div class="m-card">Garden makeovers</div>
+          </div>
+          <div class="m-rev"><span class="m-stars">★★★★★</span><q>Backyard went from dirt to done in four days.</q>— Mark, Cleveland</div>
+          <div class="m-fill"></div>
+          <div class="m-bar"><span>Call 0433 ···</span><span>Get a quote</span></div>
+        </div></div>
+        <figcaption><b>Landscaper</b>Photo first, because the work sells itself. Quote form emails straight to your phone.</figcaption>
+      </figure>
+
+    </div>
+    <p style="color:var(--mute);font-size:.9rem;margin-top:1.5rem;max-width:60ch">Business names and reviews shown are illustrative examples of layout, not real clients. Your site uses your real photos.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li><div><strong>Ten-minute chat</strong><p>Your services, suburbs, licence number and a few job photos from your phone. That's all we need.</p></div></li>
+      <li><div><strong>We build it</strong><p>Within 3 days you get a link to the finished site. Want a colour changed or a photo swapped? Say so, it's done.</p></div></li>
+      <li><div><strong>You approve, then pay</strong><p>Happy? Pay the flat fee and it goes live on your own domain the same day. Not happy? You owe nothing.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>One price. No monthly fee.</h2>
+    <div class="price">
+      <div>
+        <div class="big"><sup>$</sup>350</div>
+        <p class="was">Founding rate for the first 5 Brisbane clients, then <s>$650</s>. Domain and hosting run about $20 a year, paid straight to the provider in your name.</p>
+        <div class="guarantee">See it first, pay after. If the finished site isn't right, walk away and keep your money.</div>
+      </div>
+      <ul class="inc">
+        <li>Home, services, about and contact pages</li>
+        <li>Tap-to-call button and quote form that emails you</li>
+        <li>Your licence, ABN and service suburbs shown clearly</li>
+        <li>Google Business Profile set up so you show in local searches</li>
+        <li>Looks right on every phone</li>
+        <li>You own everything, no lock-in</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Questions tradies ask</h2>
+    <div class="faq">
+      <details><summary>I've already got a Facebook page. Do I need this?</summary><p>Facebook is where you post. A website is where people check you're legit before they ring. Google shows websites, not Facebook pages, when someone searches "electrician Logan". Keep Facebook, add the site.</p></details>
+      <details><summary>Do I have to write anything?</summary><p>No. We ask you ten minutes of questions and write it all. You read it, tell us what's wrong, we fix it.</p></details>
+      <details><summary>What if I want changes later?</summary><p>Small changes in the first month are free. After that, $50 for a batch of changes, or we show you how to do them yourself.</p></details>
+      <details><summary>Why so cheap?</summary><p>We're new in Brisbane and want five good sites we can show people. That's the founding rate. Once we have them, the price goes up.</p></details>
+      <details><summary>What happens if you disappear?</summary><p>Nothing. The domain, hosting and site files are all in your name. Anyone can take over from where we left off.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Get your site built this week</h2>
+    <div class="grid">
+      <div class="ways">
+        <div>Text or call <a href="tel:+61400000000">04XX XXX XXX</a></div>
+        <div>Email <a href="mailto:siteworkqld@gmail.com">siteworkqld@gmail.com</a></div>
+        <p>Tell us your trade and suburb. We'll reply the same day with what your site would look like.</p>
+        <div class="who">
+          <b>Who you're dealing with</b>
+          <p style="margin-top:.5rem">Sitework is run by Jacob, a Brisbane local. Before this he spent years in sales and customer service, which means two things for you: he answers his phone, and he explains things in plain English.</p>
+          <p style="margin-top:.75rem">No agency, no offshore team, no account manager in the middle. You deal with the person building your site, from the first chat to the day it goes live.</p>
+          <ul style="margin:.75rem 0 0;padding-left:1.1rem;display:grid;gap:.3rem">
+            <li>Replies within one business day, usually the same day</li>
+            <li>Every site delivered with your logins written down and handed over</li>
+            <li>Registered Australian business, invoice provided for your tax</li>
+          </ul>
+        </div>
+      </div>
+      <form id="qf" novalidate>
+        <label>Your name<input name="name" autocomplete="name" required></label>
+        <label>Trade<select name="trade" required><option value="">Choose one</option><option>Plumber</option><option>Electrician</option><option>Landscaper</option><option>Builder / carpenter</option><option>Painter</option><option>Concreter</option><option>Tiler</option><option>Roofer</option><option>Other</option></select></label>
+        <label>Suburb<input name="suburb" required></label>
+        <label>Your mobile<input name="phone" type="tel" autocomplete="tel" required></label>
+        <label>Anything else (optional)<textarea name="notes"></textarea></label>
+        <button class="cta" type="submit">Send my details</button>
+        <p id="msg" style="color:#a3adbb;font-size:.95rem" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><footer>Sitework · Brisbane, QLD · ABN pending</footer></div>
+
+<div class="bar" aria-label="Contact">
+  <a class="t" href="sms:+61400000000">Text us</a>
+  <a class="q" href="#contact">Get a quote</a>
+</div>
+
+<script>
+(function(){
+  var f=document.getElementById('qf'),m=document.getElementById('msg');
+  var TO='siteworkqld@gmail.com';
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var d=new FormData(f),miss=[];
+    ['name','trade','suburb','phone'].forEach(function(k){if(!String(d.get(k)||'').trim())miss.push(k)});
+    if(miss.length){m.textContent='Fill in your '+miss.join(', ')+' so we can get back to you.';return}
+    var body='Name: '+d.get('name')+'\nTrade: '+d.get('trade')+'\nSuburb: '+d.get('suburb')+'\nMobile: '+d.get('phone')+'\nNotes: '+(d.get('notes')||'-');
+    var url='mailto:'+TO+'?subject='+encodeURIComponent('Website quote — '+d.get('trade')+', '+d.get('suburb'))+'&body='+encodeURIComponent(body);
+    m.textContent='Opening your email app. Hit send and we\'ll reply today.';
+    window.location.href=url;
+  });
+})();
+</script>
+</body>
+</html>
